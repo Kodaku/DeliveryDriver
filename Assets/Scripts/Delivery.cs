@@ -10,12 +10,14 @@ public class Delivery : MonoBehaviour
     [SerializeField] List<GameObject> packages;
     private GameObject currentPackage;
     private SpriteRenderer spriteRenderer;
+    private Driver driver;
     private bool isPackagePickedUp;
 
     private void Start() {
         currentPackage = null;
         isPackagePickedUp = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        driver = GetComponent<Driver>();
     }
 
     public void OnCollisionEnter2D(Collision2D other) {
